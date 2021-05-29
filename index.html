@@ -12,42 +12,89 @@
     </head>
 
     <body>
-        <header>
-            <div class="container">
-                <div id="logo">
-                <a href="../WelcomePack/Index.html"><img src="../WelcomePack/Img/logoweb.png"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li class="select"><a href="../WelcomePack/Index.html" class="slctd-navbtn">Home</a></li>
-                    <li class="select"><a href="../WelcomePack/About.html" class="#">About</a></li>
-                    <li class="select"><a href="../WelcomePack/Services.html" class="#">Services</a></li>
-                    <li class="select"><a href="../WelcomePack/Client.html" class="#">Client</a></li>
-                    <li class="select"><a href="../WelcomePack/Contact.html" class="#">Contact</a></li>
-                    <li class="select"><a href="#"><img id="search" src="../WelcomePack/Img/search.png"></a></li>
+        <header class="header">
+            <nav class="navbar">
+                <a href="../WelcomePack/Index.html" ><img class="nav-logo" src="../WelcomePack/Img/logoweb.png" ></a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="../WelcomePack/Index.html" class="nav-link slecnav">Home</a></li>
+                    <li class="nav-item"><a href="../WelcomePack/About.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="../WelcomePack/Services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="../WelcomePack/Client.html" class="nav-link">Client</a></li>
+                    <li class="nav-item"><a href="../WelcomePack/Contact.html" class="nav-link">Contact</a></li>  
+                <form id="search1"  class="search-form ">
+                    <div class="input-group search-group">
+                        <input type="text" class="form-control search-control" >
+                    </div>
+                </form>
                 </ul>
-            </nav>
-        </header>  
+                
+                <div class="hamburger">
+                    <form id="search2" class="search-form ">
+                    <div class="input-group search-group">
+                        <input type="text" class="form-control search-control" >
+                    </div>
+                </form>
+                    <img class="hamb-btn" src="../WelcomePack/Img/menu.png" >
+                </div>
 
-        <section id="slideshow">
-            <div class="slidebox">
-                <h1 id="slidetitle1">Welcome</h1>
-                <h1 id="slidetitle2">Pack</h1>
-                <p class="parag">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                A deleniti earum quae ipsam accusantium eaque rem porro, omnis eveniet eum rerum praesentium? 
-                </p>
-                <a href="../WelcomePack/About.html" id="learnbtn">Learn More...</a>          
+            </nav>
+        </header>
+
+
+        <section id="slidemainbox">
+            <div class="slideshow-container">
+                <div class="slideshow-inner">
+                    <div id="slide1" class="mySlides fade">
+                        <div class="text">
+                        <h1 class="slidetitle1">Welcome</h1>
+                        <h1 class="slidetitle2">Pack</h1>
+                        <p class="parag">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            A deleniti earum quae ipsam accusantium eaque rem porro, 
+                            omnis eveniet eum rerum praesentium? 
+                        </p>
+                        <a href="../WelcomePack/About.html" class="learnbtn">Learn More...</a>
+                        </div>          
+                    </div>
+                    <div id="slide2" class="mySlides fade">
+                        <div class="text">
+                            <h1 class="slidetitle1">Welcome</h1>
+                            <h1 class="slidetitle2">Pack</h1>
+                            <p class="parag">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                A deleniti earum quae ipsam accusantium eaque rem porro, 
+                                omnis eveniet eum rerum praesentium? 
+                            </p>
+                            <a href="../WelcomePack/About.html" class="learnbtn">Lorem ipsum</a>
+                        </div>        
+                    </div>
+                    <div id="slide3" class="mySlides fade">
+                        <div class="text">
+                            <h1 class="slidetitle1">Welcome</h1>
+                            <h1 class="slidetitle2">Pack</h1>
+                            <p class="parag">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                                A deleniti earum quae ipsam accusantium eaque rem porro, 
+                                omnis eveniet eum rerum praesentium? 
+                            </p>
+                            <a href="../WelcomePack/About.html" class="learnbtn">Click here ...</a>
+                        </div>        
+                    </div>
+                </div>
             </div>
-            <div id="slide-btn">
-                <a href="#"><img src="../WelcomePack/Img/dot.png"></a>
-                <a href="#"><img src="../WelcomePack/Img/dot.png"></a>
-                <a href="#"><img src="../WelcomePack/Img/dot.png"></a>
+            <div id="slidedots">
+                <img class="dot" onclick='currentSlide(1)' src="../WelcomePack/Img/dot.png">
+                <img class="dot" onclick='currentSlide(2)' src="../WelcomePack/Img/dot.png">
+                <img class="dot" onclick='currentSlide(3)' src="../WelcomePack/Img/dot.png">
             </div>
-        </section>  
+        </section>
+
+        
 
         <section id="boxes">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
             <div class="container">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. </h1>
+                
                 <div class="box">
                     <img src="../WelcomePack/Img/Package1-img.png">
                     <h2 id="subt1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
@@ -74,7 +121,10 @@
                 </div>
             </div>
         </section>
-      
+        
+
+
+
         <footer>
             <div>
                 <a target="_blank" href="https://www.linkedin.com/"><img id="linked" src="../WelcomePack/Img/linke-icons.png"></a>
@@ -84,6 +134,8 @@
             </div> 
             <p>Welcome Pack, All Rights Reserved &copy; 2021 </p>
         </footer>
+
+
+        <script src="../WelcomePack/app.js"></script>
     </body>
 </html>
-      
