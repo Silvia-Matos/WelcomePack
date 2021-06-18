@@ -1,27 +1,11 @@
 const hamburger = document.querySelector(".hamb-btn");
+const scrollstop = document.querySelector(".allbody");
+const section_all = document.querySelector(".all-sections");
 const navMenu = document.querySelector(".nav-menu");
 const navLink = document.querySelectorAll(".nav-link");
 
 hamburger.addEventListener("click", mobileMenu);
 navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");  
-    
-}
-
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  
-
-}
-
-var slideIndex = 1;
-var myTimer;
-var slideshowContainer;
-
 window.addEventListener("load",function() {
     showSlides(slideIndex);
     myTimer = setInterval(function(){currentSlide(1)}, 4000);
@@ -30,15 +14,34 @@ window.addEventListener("load",function() {
     slideshowContainer.addEventListener('mouseleave', resume)
 })
 
+
+function mobileMenu() {
+    window.scrollTo(0, 0);
+    scrollstop.classList.toggle("active");
+    section_all.classList.toggle("active");
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");  
+}
+function closeMenu() {
+    scrollstop.classList.remove("active");
+    section_all.classList.remove("active");
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+
+var slideIndex = 1;
+var myTimer;
+var slideshowContainer;
+
 function currentSlide(n){
   clearInterval(myTimer);
   myTimer = setInterval(function(){currentSlide(n + 1)}, 6000);
   showSlides(slideIndex = n);
 }
-
 function showSlides(n){
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("myslides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
@@ -52,10 +55,9 @@ function showSlides(n){
   dots[slideIndex-1].className += " act";
 }
 
-pause = () => {
+pause = () =>{
   clearInterval(myTimer);
 }
-
 resume = () =>{
   clearInterval(myTimer);
   myTimer = setInterval(function(){currentSlide(slideIndex)}, 6000);
