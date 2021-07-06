@@ -6,9 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="icon" href="../WelcomePack/Img/web-icon.png" >
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Supermercado+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../WelcomePack/Style.css">
-        <title>Welcome Pack | Client</title>
+        <title>Welcome Pack | About</title>
     </head>
     <body class="allbody">
         <header class="header">
@@ -28,10 +27,10 @@
                 </ul>
                 <div class="hamburger">
                     <form id="search2" class="search-form ">
-                    <div class="input-group search-group">
-                        <input type="text" class="form-control search-control" >
-                    </div>
-                </form>
+                        <div class="input-group search-group">
+                            <input type="text" class="form-control search-control" >
+                        </div>
+                        </form>
                     <img class="hamb-btn" src="../WelcomePack/Img/menu.png" >
                 </div>
             </nav>
@@ -65,7 +64,7 @@
                 <h2 >Some of our Clients</h2>
                 <div class="client-col">
                     <div class="client-logo">
-                        <img src="../WelcomePack/Img/photomockup-icon1.png" style="width:70%">
+                        <img src="../WelcomePack/Img/photomockup-icon1.png" alt="Mockup logo v1" style="width:70%">
                         <div class="logotext">
                             <h2 class="client-name">Client Logo 1</h2>
                             <p>Lorem Aipisicing</p>
@@ -74,7 +73,7 @@
                 </div>
                 <div class="client-col">
                     <div class="client-logo">
-                        <img src="../WelcomePack/Img/photomockup-icon2.png" style="width:70%">
+                        <img src="../WelcomePack/Img/photomockup-icon2.png" alt="Mockup logo v2" style="width:70%">
                         <div class="logotext">
                             <h2 class="client-name">Client Logo 2</h2>
                             <p>Lorem Ipsum Dolor</p>
@@ -83,7 +82,7 @@
                 </div>
                 <div class="client-col">
                     <div class="client-logo">
-                        <img src="../WelcomePack/Img/photomockup-icon1.png" style="width:70%">
+                        <img src="../WelcomePack/Img/photomockup-icon1.png" alt="Mockup logo v1" style="width:70%">
                         <div class="logotext">
                             <h2 class="client-name">Client Logo 3</h2>
                             <p>Lorem Eligendi</p>
@@ -92,16 +91,44 @@
                 </div>
             </div>
         </section>
+        <section class="subform">
+            <h2>Lorem ipsum quaerat psum dolor sit!</h2>
+            <form action="send.php" method="post" enctype=”multipart/form-data”>
+                <label><input name="email" type="email" class="sub-input" placeholder="Insert Your Email Here..."/></label>
+                <input type="submit" value="Subscribe" class="sub-btn">
+            </form>
+        </section>
         <footer>
             <div>
                 <a target="_blank" href="https://www.linkedin.com/"><img id="linked" src="../WelcomePack/Img/linke-icons.png"></a>
                 <a target="_blank" href="https://www.instagram.com/"><img id="instag" src="../WelcomePack/Img/insta-icons.png"></a>
                 <a target="_blank" href="https://www.facebook.com/"><img id="facebo" src="../WelcomePack/Img/Faceb-icons.png"></a>
-                <a target="_blank" href="https://twitter.com/"><img id="twitte" src="../WelcomePack/Img/twitt-icons.png"></a>
+                <a target="_blank" href="https://www.twitter.com/"><img id="twitte" src="../WelcomePack/Img/twitt-icons.png"></a>
             </div> 
             <p>Welcome Pack, All Rights Reserved &copy; 2021 </p>
         </footer>
-        <script src="../WelcomePack/app.js"></script>
+        <script>
+            const hamburger = document.querySelector(".hamb-btn");
+            const scrollstop = document.querySelector(".allbody");
+            const section_all = document.querySelector(".all-sections");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLink = document.querySelectorAll(".nav-link");
+            hamburger.addEventListener("click", mobileMenu);
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+            function mobileMenu() {
+                window.scrollTo(0, 0);
+                scrollstop.classList.toggle("active");
+                section_all.classList.toggle("active");
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");  
+            }
+            function closeMenu() {
+                scrollstop.classList.remove("active");
+                section_all.classList.remove("active");
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        </script>
     </body>
 </html>
 

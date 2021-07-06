@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="icon" href="../WelcomePack/Img/web-icon.png" >
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Supermercado+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../WelcomePack/Style.css">
         <title>Welcome Pack | Services</title>
     </head>
@@ -28,10 +27,10 @@
                 </ul>
                 <div class="hamburger">
                     <form id="search2" class="search-form ">
-                    <div class="input-group search-group">
-                        <input type="text" class="form-control search-control" >
-                    </div>
-                </form>
+                        <div class="input-group search-group">
+                            <input type="text" class="form-control search-control" >
+                        </div>
+                    </form>
                     <img class="hamb-btn" src="../WelcomePack/Img/menu.png" >
                 </div>
             </nav>
@@ -95,6 +94,27 @@
             </div> 
             <p>Welcome Pack, All Rights Reserved &copy; 2021 </p>
         </footer>
-        <script src="../WelcomePack/app.js"></script>
+        <script>
+            const hamburger = document.querySelector(".hamb-btn");
+            const scrollstop = document.querySelector(".allbody");
+            const section_all = document.querySelector(".all-sections");
+            const navMenu = document.querySelector(".nav-menu");
+            const navLink = document.querySelectorAll(".nav-link");
+            hamburger.addEventListener("click", mobileMenu);
+            navLink.forEach(n => n.addEventListener("click", closeMenu));
+            function mobileMenu() {
+                window.scrollTo(0, 0);
+                scrollstop.classList.toggle("active");
+                section_all.classList.toggle("active");
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");  
+            }
+            function closeMenu() {
+                scrollstop.classList.remove("active");
+                section_all.classList.remove("active");
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        </script>
     </body>
 </html>
